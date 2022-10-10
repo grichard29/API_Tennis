@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "3fd9e665-6eaa-4e8e-83c4-efd95060085e",
+		"name": "API Tennis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5790172"
+	},
+	"item": [
+		{
+			"name": "List of all players sort by rank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/players",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get player by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/players/52",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"players",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get imc of players in data sample",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/players/imc",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"players",
+						"imc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get best country",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/players/best-country",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"players",
+						"best-country"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get height median of players in data sample",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/players/median",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"players",
+						"median"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_url",
+			"value": "http://apitennis-env.eba-c2mv3nmb.us-east-1.elasticbeanstalk.com",
+			"type": "string"
+		}
+	]
+}
