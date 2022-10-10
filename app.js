@@ -12,7 +12,7 @@ app.use(routes);
 //start http server
 const httpServer = http.createServer(app);
 
-const port = 5000;
+const port = 8080;
 
 httpServer.listen(port);
 console.log(`API http server listening at port ${port}`);
