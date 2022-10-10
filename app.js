@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors());
-const routes = require('./routes/index.route');
+const routes = require('./src/routes/index.route');
 app.use(routes);
 
 //start http server
