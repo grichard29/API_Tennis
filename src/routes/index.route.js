@@ -1,12 +1,21 @@
 const express = require('express');
 const players = require('./players.route');
-
+const playersController = require('../controllers/players.controller');
 const notFoundController = require('../controllers/notfound.controller');
 const router = express.Router();
 
-router.use('/players', players);
+router.route('/v1/best-ratio-country')
+    .get(playersController.getBestCountry);
 
-router.get('/', (req, res) => res.send('Sample Node API Version1'));
+router.route('/v1/mean-imc')
+    .get(playersController.getIMC);
+
+router.route('/v1/height-median')
+    .get(playersController.getMedian);
+
+router.use('/v1/players', players);
+
+router.get('/', (req, res) => res.send('Sample Node API Version 1'));
 
 router.get('/health', (req, res) => {
   const healthcheck = {

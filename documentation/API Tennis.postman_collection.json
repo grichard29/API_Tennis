@@ -12,11 +12,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/players",
+					"raw": "{{api_url}}/v1/players",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
+						"v1",
 						"players"
 					]
 				}
@@ -29,11 +30,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/players/52",
+					"raw": "{{api_url}}/v1/players/52",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
+						"v1",
 						"players",
 						"52"
 					]
@@ -47,13 +49,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/players/imc",
+					"raw": "{{api_url}}/v1/mean-imc",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
-						"players",
-						"imc"
+						"v1",
+						"mean-imc"
 					]
 				}
 			},
@@ -65,13 +67,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/players/best-country",
+					"raw": "{{api_url}}/v1/best-ratio-country",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
-						"players",
-						"best-country"
+						"v1",
+						"best-ratio-country"
 					]
 				}
 			},
@@ -83,13 +85,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{api_url}}/players/median",
+					"raw": "{{api_url}}/v1/height-median",
 					"host": [
 						"{{api_url}}"
 					],
 					"path": [
-						"players",
-						"median"
+						"v1",
+						"height-median"
 					]
 				}
 			},

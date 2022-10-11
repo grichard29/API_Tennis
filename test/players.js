@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 describe('/GET players', () => {
     it('it should get all players according to their ranks', (done) => {
         chai.request(server)
-            .get('/players')
+            .get('/v1/players')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
@@ -21,7 +21,7 @@ describe('/GET players', () => {
 describe('/GET/:id player', () => {
     it('it should get a player by its id', (done) => {
         chai.request(server)
-            .get('/players/52')
+            .get('/v1/players/52')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
@@ -39,10 +39,32 @@ describe('/GET/:id player', () => {
     });
 });
 
+describe('/GET/:id player', () => {
+    it('it should get a player by not found id', (done) => {
+        chai.request(server)
+            .get('/v1/players/678')
+            .end((err, res) => {
+                res.should.have.status(404);
+                done();
+            })
+    });
+});
+
+describe('/GET/:id player', () => {
+    it('it should get a player by invalid id', (done) => {
+        chai.request(server)
+            .get('/v1/players/;qj,nzdb')
+            .end((err, res) => {
+                res.should.have.status(422);
+                done();
+            })
+    });
+});
+
 describe('/GET best-country', () => {
     it('it should get the best country according to its latest matches', (done) => {
         chai.request(server)
-            .get('/players/best-country')
+            .get('/v1/best-ratio-country')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
@@ -57,10 +79,11 @@ describe('/GET best-country', () => {
 describe('/GET IMC', () => {
     it('it should get the mean IMC of the data sample', (done) => {
         chai.request(server)
-            .get('/players/imc')
+            .get('/v1/mean-imc')
             .end((err, res) => {
                 res.should.have.status(200);
-                res.text.should.be.eql('1.1678919497752918');
+                res.body.should.be.a('object');
+                res.body.should.have.property('data').eql(0.23357838995505836);
                 done();
             })
     });
@@ -70,10 +93,11 @@ describe('/GET IMC', () => {
 describe('/GET Median', () => {
     it('it should get the median height of the data sample', (done) => {
         chai.request(server)
-            .get('/players/median')
+            .get('/v1/height-median')
             .end((err, res) => {
                 res.should.have.status(200);
-                res.text.should.be.eql('185');
+                res.body.should.be.a('object');
+                res.body.should.have.property('data').eql(185);
                 done();
             })
     });
