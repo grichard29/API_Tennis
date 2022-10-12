@@ -77,14 +77,12 @@ const getBestCountry = function () {
             };
         }
     });
-    let res;
+    let res = {won: 0, played: 1};
     // We loop on the countries to find the max ratio : won/played
     Object.keys(dataByCountry).forEach((code) => {
         const country = dataByCountry[code];
         country.code = code;
-        if (!res) {
-            res = country;
-        } else if(country.won / country.played > res.won / res.played) {
+        if(country.won / country.played > res.won / res.played) {
             res = country;
         }
     });
